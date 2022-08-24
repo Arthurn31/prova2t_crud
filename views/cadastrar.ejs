@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Controle de games</title>
+  </head>
+  <body>
+    <nav id="menu-h">
+      <ul>
+        <li>
+          <a href="https://aiko.digital/"> Home </a>
+        </li>
+
+        <li><a href="https://aiko.digital/sobre/">Sobre</a></li>
+
+        <li><a href="https://aiko.digital/blog/">Quem Somos</a></li>
+
+        <li><a href="https://aiko.digital/contato/">Contato</a></li>
+      </ul>
+    </nav>
+    <!--fim do menu-->
+    <div class="mae">
+      <div class="filho1">
+        <div class="login-box">
+          <form
+            action="/op
+          "
+            method="POST"
+          >
+            <input type="hidden" name="id" required="" />
+            <div class="user-box">
+              <input type="text" name="nome" required="" />
+              <label>Digite nome do jogo</label>
+            </div>
+            <div class="user-box">
+              <input type="date" name="date" />
+              <label>Data</label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="materia" required="" />
+              <label>Categoria </label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="atividade" required="" />
+              <label>Plataforma</label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="nota" required="" />
+              <label>Nota</label>
+            </div>
+            <a>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <button type="submit" class="delete-btn">Salvar</button>
+            </a>
+            <a>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <button type="reset" class="delete-btn">Delete</button>
+            </a>
+           
+          </form>
+        </div>
+      </div>
+      <div class="filho2">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Codigo</th>
+              <th>Nome</th>
+              <th>Data</th>
+              <th>Categoria</th>
+              <th>Plataforma</th>
+              <th>Nota</th>
+            </tr>
+            <% Dados.forEach((e, index) =>{ %>
+            <tr>
+              <td>
+                <form action="/del" method="POST">
+                  <button class="btndelet" name="id" value="<%= e.id %>">
+                    <img src="/img/cancelar.png" alt="" />
+                  </button>
+                </form>
+              </td>
+              <td><%= e.id %></td>
+              <td><%= e.student %></td>
+              <td><%= e.timestamp %></td>
+              <td><%= e.subject %></td>
+              <td><%= e.type %></td>
+              <td><%= e.value %></td>
+            </tr>
+            <%}) %>
+          </thead>
+        </table>
+      </div>
+    </div>
+      <!--inicio do rodape-->
+      <footer id="myFooter">
+        <div class="container">
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/arthur-henriques-1b511820b/"
+                ><img src="./img/linkedin.png" height="40" width="40"
+              /></a>
+            </li>
+            <li>
+              <a href="https://cotemig.com.br/">
+                <img src="./img/cotemig.jpg" height="40" width="40"
+              /></a>
+            </li>
+            <li>
+              <a href="https://mail.google.com/mail/u/0/#inbox"
+                ><img src="./img/gmail-logo-.png" height="40" width="40"
+              /></a>
+            </li>
+          </ul>
+          <p class="footer-copyright">
+            © 2022 Copyright - Arthur Henriques - Todos os direitos
+            reservados.
+          </p>
+        </div>
+      </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
